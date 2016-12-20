@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///Users/Dean/Desktop/Parallax%20Scrolling%20/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Dean Parallax scrolling</title>
+
+    <style>
+      html, body{
+        height: 100%;
+        margin: 0;
+        font: 400 15px/1.8 "Lato", sans-serif;
+      }
+
+      .header, .header2, .header3 {
+        position: relative;
+        opacity: 0.8;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .header {
+        background: url(images/bg_header_parallax.jpg) -25px -50px;
+        min-height: 100%;
+      }
+
+      .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+      }
+
+      .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+      }
+
+      .textUnderHeader{
+        color: #777;
+        background-color: white;
+        padding: 50px 80px;
+        text-align: center;
+      }
+
+      h3{
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+      }
+
+      .header2 {
+        background-image: url(images/bg_parallax_2.jpg);
+        min-height: 400px;
+      }
+
+      .header3 {
+        background-image: url(images/bg_parallax_3.jpg);
+        min-height: 100%;
+      }
+
+    </style>
+
+    <script type="text/javascript" src="./Dean Parallax scrolling_files/jquery.interactive_bg.js"></script>
+    <script type="text/javascript" src="./Dean Parallax scrolling_files/jquery-latest.js"></script>
+    <script type="text/javascript" src="file:///Users/Dean/Desktop/Parallax%20Scrolling%20/custom.js"></script>
+  </head>
+  <body>
+
+    <div class="header" data-ibg-bg="images/bg_header_parallax.jpg" style="background-position: -27.2656px -54.0718px;">
+      <div class="caption">
+        <span class="border">
+          Scroll naar beneden en/of beweeg met je muis
+        </span>
+      </div>
+    </div>
+    <div class="textUnderHeader">
+      <h3>Parallax test</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec orci tempor, pretium enim quis,
+        semper orci. Donec et mauris laoreet, pretium dui quis, rhoncus purus. In sit amet enim eget leo faucibus
+        eleifend. Donec iaculis, lorem eget fringilla vehicula, nulla orci egestas nisi, a tempus neque erat et lacus.
+        Curabitur mollis rhoncus gravida. Proin dignissim urna ut dui gravida pretium id quis enim.
+        Quisque varius lorem non varius pharetra. Sed egestas gravida tellus et sollicitudin.
+        In semper vestibulum metus id venenatis. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Sed dictum odio sit amet massa lobortis ultricies. Class aptent taciti
+        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      </p>
+    </div>
+    <div class="header2">
+      <div class="caption">
+        <span class="border">
+          Test met parallax scrolling
+        </span>
+      </div>
+    </div>
+    <div class="textUnderHeader">
+      <h3>Parallax test</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec orci tempor, pretium enim quis,
+        semper orci. Donec et mauris laoreet, pretium dui quis, rhoncus purus. In sit amet enim eget leo faucibus
+        eleifend. Donec iaculis, lorem eget fringilla vehicula, nulla orci egestas nisi, a tempus neque erat et lacus.
+      </p>
+    </div>
+    <div class="header3">
+    </div>
+    <script>
+    $(document).ready(function() {
+      var movementStrength = 25;
+      var height = movementStrength / $(window).height();
+      var width = movementStrength / $(window).width();
+      $(".header").mousemove(function(e){
+          var pageX = e.pageX - ($(window).width() / 2);
+          var pageY = e.pageY - ($(window).height() / 2);
+          var newvalueX = width * pageX * -1 - 25;
+          var newvalueY = height * pageY * -1 - 50;
+          $(this).css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+      });
+    </script>
+  
+
+</body></html>

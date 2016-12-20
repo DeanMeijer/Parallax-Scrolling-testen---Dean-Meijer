@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dean Parallax scrolling</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Header 2</a>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" onclick="dropdownMenu()">Dropdown</a>
+          <div class="dropdown-content" id="dropdown">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="header">
+      <div class="caption">
+        <span class="border">
+          Scroll naar beneden en/of beweeg met je muis
+        </span>
+      </div>
+    </div>
+    <div class="textUnderHeader">
+      <h3>Parallax test</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec orci tempor, pretium enim quis,
+        semper orci. Donec et mauris laoreet, pretium dui quis, rhoncus purus. In sit amet enim eget leo faucibus
+        eleifend. Donec iaculis, lorem eget fringilla vehicula, nulla orci egestas nisi, a tempus neque erat et lacus.
+        Curabitur mollis rhoncus gravida. Proin dignissim urna ut dui gravida pretium id quis enim.
+        Quisque varius lorem non varius pharetra. Sed egestas gravida tellus et sollicitudin.
+        In semper vestibulum metus id venenatis. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Sed dictum odio sit amet massa lobortis ultricies. Class aptent taciti
+        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      </p>
+    </div>
+    <div class="header2">
+      <div class="caption">
+        <span class="border">
+          Test met parallax scrolling
+        </span>
+      </div>
+    </div>
+    <div class="textUnderHeader">
+      <h3>Parallax test</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec orci tempor, pretium enim quis,
+        semper orci. Donec et mauris laoreet, pretium dui quis, rhoncus purus. In sit amet enim eget leo faucibus
+        eleifend. Donec iaculis, lorem eget fringilla vehicula, nulla orci egestas nisi, a tempus neque erat et lacus.
+      </p>
+    </div>
+    <div class="header3">
+    </div>
+    <script>
+    $(window).scroll( function() {
+        if ($(window).scrollTop() > $('.menu').offset().top)
+            $('.menu').addClass('floating');
+        else
+            $('.menu').removeClass('floating');
+    } );
+    </script>
+    <script type="text/javascript" src="js/muisAchtergrond.js"></script>
+    <script type="text/javascript" src="js/dropdownMenu.js"></script>
+  </body>
+</html>
